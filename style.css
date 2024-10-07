@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes gay {
+    0%   {color: #550460;}
+    25%  {color: rgb(157, 125, 199);}
+    50%  {color: rgb(110, 51, 142);}
+    75%  {color: #5300ab;}
+    100% {color: rgb(171, 112, 235);}
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    width:100%;
+    height:100%;
+    background-color: rgb(24, 18, 42);
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+
+.text_normal {
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3em;
+}
+
+.title_text {
+    width: 50vw;
+    font-size: 4em;
+    font-weight: 500;
+    animation: gay 4s infinite;
+    float: right;
+    position: relative;
+    transform: translate(-10%,0%);
+    
+}
+
+.myself {
+   filter: drop-shadow(30px 10px 0px #957efa);
+    width: 35%; 
+    border-radius: 50%;
+    float: left;
+    position: relative;
+    transform: translate(170%,0%)  
+}
+
+.avatar_and_title {
+    display: flex;
+    padding-top: 6em;
+    background-color: rgb(24, 18, 42);
+    height: 50vh;
+    align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #000000;
+  filter: opacity(90%) ;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-between; /* Space between the links and icons */
+  align-items: center;
+  padding: 0 1em;
+}
+.navbar-links {
+  display: flex; /* Ensures the links align horizontally */
+}
+  
+  .navbar a {
+    padding: 12px;
+    color: rgb(248, 248, 248);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.7rem;
+    text-decoration: none;  
+
+  }
+  
+  
+  .navbar a:hover {
+    background-color: #957efa;
+  }
+  
+ 
+  .active {
+    background-color: #51088c;
+  }
+  
+  .navbar-icons { 
+    filter: invert();
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+    padding-right: 3em;
+  }
+
+  .navbar-icons a:hover {
+    background-color: transparent;
+  }
+
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+
+
+
+/*Scrollbar*/
+  
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8709aa none;
+  }
+
+  *::-webkit-scrollbar {
+    width: 0.7em;
+  }
+
+ 
+
+  *::-webkit-scrollbar-thumb {
+    
+    background-color: #8709aa;
+    border-radius: 45px;
+    border: 0px groove #e3e3e3;
+  }
+
+
+
+  .section1 {
+    padding-bottom: 10em;
+  }
+
+
+  .skew-1{
+    width:100%;
+    height:100px;
+    position:relative;
+    left:0px;
+    background: linear-gradient(to left bottom, rgb(24, 18, 42) 49%, #957efa 50%);
+    
+    
+    
+  }
+  .section2 {
+    background: #957efa;
+    padding-bottom: 20em;
+  }
+  
+
+  .skew-2{
+    width:100%;
+    height:100px;
+    position:relative;
+    left:0px;
+    background: linear-gradient(to right bottom, #957efa 49%, #e8d5b5 50%);
+    
+  }
+  .section3 {
+    background-color: #e8d5b5;
+    padding-bottom: 20em;
+  }
+
+.container {
+  margin-right: 100px;
+  margin-left: 100px;
+}

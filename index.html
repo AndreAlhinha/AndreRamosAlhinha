@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>André Alhinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-links">
+            <a class="active" href="#"><i class=""></i> Home</a>
+            <a href="#Me"><i class=""></i> Me</a>
+            <a href="#Education"><i class=""></i> Education</a>
+            <a href="#"><i class=""></i> Projects</a>
+            <a href="#"><i class=""></i> Achivements</a>
+            <a href="#"><i class=""></i> Talk to me!</a>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.linkedin.com/in/andré-alhinha-a6a592297/"><img class="navbar-icon" src="assets/icons/linkedin.svg"></a>
+            <a href="https://www.instagram.com/andrealhinha/"><img class="navbar-icon" src="assets/icons/instagram.svg"></a>
+            <a href="https://github.com/AndreAlhinha?tab=overview&from=2024-08-01&to=2024-08-31"><img class="navbar-icon" src="assets/icons/github.svg"></a>
+        </div>
+    </div>
+    
+
+
+    <section class="section1">
+        <div class="avatar_and_title">
+            <div>
+                <img src="assets\cu.jpg"  class="myself">
+            </div>
+            <div>
+                
+                <h1>
+                    <a class="title_text text_normal">André</a>
+                    <a class="title_text text_normal typewrite " data-period="2000" data-type='[ "Ramos Alhinha", "loves programming", "is creative.", "loves to Develop." ]'>
+                    <span class="wrap"></span>
+                    </a>
+                </h1> 
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section2">
+        <div class="skew-1"id="Me"></div>
+        
+        <div class="container">
+            <h1 class="text_normal" style="font-weight: 700; font-size: 6em;">About me</h1>
+            <p class="text_normal">Im just a chill guy that lowkey doesn't give a fuck</p>
+        </div>
+    </section>
+
+
+
+    <section class="section3">
+        <div class="skew-2" id="Education"></div>
+        
+        <div class="lorem">
+            <h1>LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM </h1>
+        </div>
+    </section>
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid rgb(255,255,255)}";
+        document.body.appendChild(css);
+    };
+</script>
